@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="IMSTableView" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="365.0" prefWidth="888.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainScreenController">
+    <children>
+        <Label layoutX="27.0" layoutY="23.0" prefHeight="39.0" prefWidth="195.0" style="-fx-border-color: black; -fx-padding: 10; -fx-border-radius: 5;" text="Inventory Management System" />
+        <AnchorPane fx:id="productTableView" layoutX="457.0" layoutY="80.0" prefHeight="225.0" prefWidth="399.0" style="-fx-border-radius: 5; -fx-border-color: black;">
+            <children>
+                <Button fx:id="addProductButton" layoutX="218.0" layoutY="191.0" mnemonicParsing="false" onAction="#mainScreenAddProductsButton" text="Add" />
+                <Button fx:id="modifyProductButton" layoutX="268.0" layoutY="191.0" mnemonicParsing="false" onAction="#mainScreenModifyProductsButton" text="Modify" />
+                <Button fx:id="deleteProductButton" layoutX="333.0" layoutY="191.0" mnemonicParsing="false" onAction="#mainScreenDeleteProductButton" text="Delete" />
+                <Label fx:id="productTable" layoutX="13.0" layoutY="7.0" text="Products">
+                </Label>
+                <TableView fx:id="mainScreenProductsTable" layoutX="6.0" layoutY="36.0" prefHeight="149.0" prefWidth="388.0">
+                    <columns>
+                        <TableColumn fx:id="productIDCol" prefWidth="75.0" text="Product ID" />
+                        <TableColumn fx:id="productNameCol" prefWidth="87.0" text="Product Name" />
+                        <TableColumn fx:id="productInventoryCol" prefWidth="100.0" text="Inventory Level " />
+                        <TableColumn fx:id="productPriceCol" prefWidth="125.0" text="Price / Cost Per Unit" />
+                    </columns>
+                </TableView>
+                <TextField fx:id="productSearchBox" layoutX="217.0" layoutY="5.0" onAction="#mainScreenProductSearch" promptText="Search by ProductID or Name" />
+            </children>
+        </AnchorPane>
+        <AnchorPane fx:id="partTableView" layoutX="27.0" layoutY="80.0" prefHeight="225.0" prefWidth="399.0" style="-fx-border-color: black; -fx-border-radius: 5;">
+            <children>
+                <TableView fx:id="mainScreenPartsTable" layoutX="7.0" layoutY="35.0" prefHeight="149.0" prefWidth="388.0">
+
+                    <columns>
+                        <TableColumn fx:id="partIDCol" prefWidth="65.0" text="Part ID" />
+                        <TableColumn fx:id="partNameCol" prefWidth="85.0" text="Part Name" />
+                        <TableColumn fx:id="partInventoryCol" prefWidth="103.0" text="Inventory Level" />
+                        <TableColumn fx:id="partPriceCol" prefWidth="134.0" text="Price / Cost Per Unit" />
+                    </columns>
+                </TableView>
+                <Label fx:id="partTable" layoutX="14.0" layoutY="5.0" text="Part" />
+                <TextField fx:id="partSearchBox" layoutX="229.0" layoutY="3.0" onAction="#mainScreenPartSearch" promptText="Search by Part ID or Name" />
+                <Button fx:id="addPartButton" layoutX="214.0" layoutY="190.0" mnemonicParsing="false" onAction="#mainScreenAddPartsButton" text="Add" />
+                <Button fx:id="modifyPartButton" layoutX="266.0" layoutY="190.0" mnemonicParsing="false" onAction="#mainScreenModifyPartsButton" text="Modify" />
+                <Button fx:id="deletePartButton" layoutX="330.0" layoutY="190.0" mnemonicParsing="false" onAction="#mainScreenDeletePartButton" text="Delete" />
+            </children>
+        </AnchorPane>
+        <Button fx:id="exitMain" layoutX="746.0" layoutY="315.0" mnemonicParsing="false" onAction="#mainScreenExitButton" text="Exit" />
+    </children>
+</AnchorPane>
